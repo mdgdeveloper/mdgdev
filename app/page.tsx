@@ -8,7 +8,8 @@ export default function LandingPage() {
 
   useEffect(() => {
     setIsVisible(true);
-    const handleMouseMove = (e) => {
+
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener('mousemove', handleMouseMove);
@@ -191,10 +192,10 @@ export default function LandingPage() {
               Ready to Build Something Amazing?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Let's turn your idea into a powerful web application that drives real results
+              Let&apos;s turn your idea into a powerful web application that drives real results
             </p>
             <button className="group bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 px-10 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 flex items-center space-x-2 mx-auto">
-              <span>Let's Talk</span>
+              <span>Let&apos;s Talk</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
