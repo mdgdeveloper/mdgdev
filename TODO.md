@@ -19,7 +19,7 @@
 - [ ] Create the folder structure for all posts
 - [ ] Create the `page.tsx` file for all posts 
 - [ ] v0.1.5: Generate with AI the content of all posts 
-
+- [ ] Create AI-generated image for each post
 
 ## Errors
 

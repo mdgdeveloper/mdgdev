@@ -9,7 +9,6 @@ import {
   Heart,
   Eye,
   ChevronRight,
-  Code,
   ExternalLink,
   ArrowUp,
   Twitter,
@@ -18,7 +17,6 @@ import {
   Copy,
   Check,
 } from "lucide-react";
-import Link from "next/link";
 
 export default function BlogPostPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -122,19 +120,19 @@ export default function BlogPostPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
       {/* Animated background gradient */}
       <div
         className="fixed inset-0 opacity-30 pointer-events-none"
         style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(139, 92, 246, 0.1), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(37, 99, 235, 0.1), transparent 40%)`,
         }}
       />
 
       {/* Reading progress bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-black/20 z-50">
         <div
-          className="h-full bg-gradient-to-r from-violet-500 to-purple-600 transition-all duration-300"
+          className="h-full bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-300"
           style={{ width: `${readingProgress}%` }}
         />
       </div>
@@ -142,17 +140,15 @@ export default function BlogPostPage() {
       {/* Navigation */}
       <nav className="relative z-10 flex items-center justify-between p-6 md:px-12 bg-black/20 backdrop-blur-sm border-b border-white/10">
         <div className="flex items-center space-x-6">
-          <Link href="/" className="">
-            <button className="cursor-pointer flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
-              <ChevronLeft className="w-5 h-5" />
-              <span>Back to Home</span>
-            </button>
-          </Link>
+          <button className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
+            <ChevronLeft className="w-5 h-5" />
+            <span>Back to Blog</span>
+          </button>
           <div className="hidden md:flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-violet-500 to-purple-600 rounded-lg flex items-center justify-center font-bold text-sm">
+            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center font-bold text-sm">
               M
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-blue-400 bg-clip-text text-transparent">
               MDGDev
             </span>
           </div>
@@ -184,53 +180,50 @@ export default function BlogPostPage() {
       >
         <div className="max-w-4xl mx-auto">
           {/* Category Badge */}
-          <div className="inline-flex items-center space-x-2 bg-violet-500/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 border border-violet-500/30">
-            <span className="text-sm text-violet-400 font-medium">
-              Technology
-            </span>
+          <div className="inline-flex items-center space-x-2 bg-blue-500/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 border border-blue-500/30">
+            <span className="text-sm text-blue-400 font-medium">Security</span>
           </div>
 
           {/* Title */}
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            The Future of Web Development:
-            <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Securing your web application:
+            <span className="bg-gradient-to-r from-blue-400 via-blue-400 to-sky-400 bg-clip-text text-transparent">
               {" "}
-              AI-Assisted Coding
-            </span>{" "}
-            in 2025
+              Best practices guide
+            </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            Explore how artificial intelligence is revolutionizing the way we
-            build web applications, from code generation to automated testing
-            and deployment.
+            Learn the essential best practices to secure your web application,
+            protect user data, and defend against common vulnerabilities in
+            2025.
           </p>
 
           {/* Meta Information */}
           <div className="flex flex-wrap items-center space-x-6 text-gray-400 mb-8">
             <div className="flex items-center space-x-2">
               <User className="w-4 h-4" />
-              <span>Mike Johnson</span>
+              <span>Lisa Thompson</span>
             </div>
             <div className="flex items-center space-x-2">
               <Calendar className="w-4 h-4" />
-              <span>January 15, 2025</span>
+              <span>December 28, 2024</span>
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="w-4 h-4" />
-              <span>8 min read</span>
+              <span>11 min read</span>
             </div>
             <div className="flex items-center space-x-2">
               <Eye className="w-4 h-4" />
-              <span>2.3k views</span>
+              <span>1.9k views</span>
             </div>
           </div>
 
           {/* Featured Image */}
-          <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-violet-900/50 to-purple-900/50 border border-white/10 mb-12">
+          <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-blue-900/50 to-blue-900/50 border border-white/10 mb-12">
             <div className="aspect-video flex items-center justify-center">
-              <div className="text-8xl">🤖</div>
+              <div className="text-8xl">🔒</div>
             </div>
             <div className="absolute inset-0 bg-black/20" />
           </div>
@@ -244,230 +237,104 @@ export default function BlogPostPage() {
             {/* Article content */}
             <div className="space-y-8 text-gray-300 leading-relaxed">
               <p className="text-xl text-gray-200 font-medium">
-                The landscape of web development is undergoing a seismic shift.
-                As we advance through 2025, artificial intelligence isn&#39;t
-                just changing how we code&#8212;it&#39;s fundamentally
-                transforming what it means to be a developer.
-              </p>
-
-              <p>
-                Gone are the days when developers spent hours debugging syntax
-                errors or writing boilerplate code. Today&#39;s AI-powered
-                development tools are sophisticated enough to understand
-                context, predict intentions, and generate production-ready code
-                that would have taken human developers days to create.
+                Web application security is more critical than ever. With cyber
+                threats evolving rapidly, developers must adopt a proactive
+                approach to safeguard their applications and user data.
               </p>
 
               <h2 className="text-3xl font-bold text-white mt-12 mb-6">
-                The AI Revolution in Development
+                1. Use HTTPS Everywhere
               </h2>
-
               <p>
-                The integration of AI into development workflows has accelerated
-                at an unprecedented pace. Tools like GitHub Copilot, ChatGPT,
-                and specialized coding assistants have evolved from simple
-                autocomplete functions to sophisticated pair programming
-                partners.
-              </p>
-
-              {/* Code Example */}
-              <div className="bg-black/40 rounded-xl p-6 border border-white/10 my-8">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-2">
-                    <Code className="w-5 h-5 text-violet-400" />
-                    <span className="text-sm text-gray-400">
-                      AI-Generated React Hook
-                    </span>
-                  </div>
-                  <button className="text-gray-400 hover:text-white transition-colors">
-                    <Copy className="w-4 h-4" />
-                  </button>
-                </div>
-                <pre className="text-green-400 text-sm overflow-x-auto">
-                  {`const useOptimizedFetch = (url, options = {}) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    
-    try {
-      const response = await fetch(url, {
-        ...options,
-        headers: {
-          'Content-Type': 'application/json',
-          ...options.headers,
-        },
-      });
-      
-      if (!response.ok) throw new Error('Network response was not ok');
-      
-      const result = await response.json();
-      setData(result);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  }, [url, options]);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  return { data, loading, error, refetch: fetchData };
-};`}
-                </pre>
-              </div>
-
-              <p>
-                This custom hook was generated by AI in seconds, complete with
-                error handling, loading states, and optimization through
-                useCallback and useEffect. The days of writing repetitive data
-                fetching logic are behind us.
+                Always serve your application over HTTPS to encrypt data in
+                transit. Use HSTS headers to enforce secure connections and
+                prevent protocol downgrade attacks.
               </p>
 
               <h2 className="text-3xl font-bold text-white mt-12 mb-6">
-                Key Benefits of AI-Assisted Development
+                2. Implement Strong Authentication & Authorization
               </h2>
-
-              <div className="grid md:grid-cols-2 gap-6 my-8">
-                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-semibold text-violet-400 mb-3">
-                    🚀 Speed & Efficiency
-                  </h3>
-                  <p className="text-gray-300">
-                    AI can generate complex components and functions in seconds,
-                    dramatically reducing development time and allowing
-                    developers to focus on architecture and user experience.
-                  </p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-semibold text-violet-400 mb-3">
-                    🎯 Reduced Errors
-                  </h3>
-                  <p className="text-gray-300">
-                    AI-generated code often follows best practices and includes
-                    proper error handling, reducing the likelihood of bugs and
-                    security vulnerabilities.
-                  </p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-semibold text-violet-400 mb-3">
-                    📚 Learning Accelerator
-                  </h3>
-                  <p className="text-gray-300">
-                    Developers can learn new patterns, libraries, and best
-                    practices by observing AI-generated code and understanding
-                    the reasoning behind different approaches.
-                  </p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-semibold text-violet-400 mb-3">
-                    🔧 Code Quality
-                  </h3>
-                  <p className="text-gray-300">
-                    AI tools can suggest improvements, refactor existing code,
-                    and ensure consistency across large codebases, maintaining
-                    high-quality standards.
-                  </p>
-                </div>
-              </div>
-
-              <h2 className="text-3xl font-bold text-white mt-12 mb-6">
-                The Human-AI Partnership
-              </h2>
-
               <p>
-                While AI excels at generating code and solving technical
-                problems, the human element remains irreplaceable. Developers
-                bring creativity, strategic thinking, and the ability to
-                understand complex business requirements that AI cannot fully
-                grasp.
-              </p>
-
-              <blockquote className="border-l-4 border-violet-500 pl-6 my-8 italic text-gray-200 bg-violet-500/10 py-4 rounded-r-lg">
-                &quot;AI doesn&#39;t replace developers&#8212;it amplifies their
-                capabilities. The best teams are those that learn to dance with
-                AI, using it as a powerful instrument in their creative
-                orchestra.&quot;
-              </blockquote>
-
-              <p>
-                The most successful development teams in 2025 are those that
-                have learned to leverage AI as a collaborative partner rather
-                than viewing it as a replacement. This partnership allows
-                developers to tackle more ambitious projects and deliver
-                higher-quality solutions in shorter timeframes.
+                Use secure authentication methods (such as OAuth2, OpenID
+                Connect, or passwordless logins). Enforce strong password
+                policies and multi-factor authentication. Ensure users can only
+                access resources they are authorized for.
               </p>
 
               <h2 className="text-3xl font-bold text-white mt-12 mb-6">
-                Looking Ahead: What&#39;s Next?
+                3. Protect Against Common Vulnerabilities
               </h2>
-
-              <p>
-                As we look toward the future, several trends are emerging that
-                will shape the next phase of AI-assisted development:
-              </p>
-
               <ul className="space-y-4 my-8">
-                <li className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-violet-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-violet-400 text-sm">1</span>
-                  </div>
-                  <div>
-                    <strong className="text-white">
-                      Contextual AI Assistants:
-                    </strong>{" "}
-                    AI that understands your entire codebase and can make
-                    suggestions based on your specific architecture and
-                    patterns.
-                  </div>
+                <li>
+                  <strong>SQL Injection:</strong> Use parameterized queries and
+                  ORM libraries to prevent injection attacks.
                 </li>
-                <li className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-violet-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-violet-400 text-sm">2</span>
-                  </div>
-                  <div>
-                    <strong className="text-white">Automated Testing:</strong>{" "}
-                    AI that can generate comprehensive test suites and identify
-                    edge cases humans might miss.
-                  </div>
+                <li>
+                  <strong>Cross-Site Scripting (XSS):</strong> Sanitize user
+                  input and use frameworks that auto-escape output.
                 </li>
-                <li className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-violet-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-violet-400 text-sm">3</span>
-                  </div>
-                  <div>
-                    <strong className="text-white">
-                      Performance Optimization:
-                    </strong>{" "}
-                    AI-driven analysis and optimization of application
-                    performance in real-time.
-                  </div>
+                <li>
+                  <strong>Cross-Site Request Forgery (CSRF):</strong> Use CSRF
+                  tokens for all state-changing requests.
+                </li>
+                <li>
+                  <strong>Insecure Direct Object References (IDOR):</strong>{" "}
+                  Validate user permissions for every resource access.
                 </li>
               </ul>
 
+              <h2 className="text-3xl font-bold text-white mt-12 mb-6">
+                4. Secure Sensitive Data
+              </h2>
               <p>
-                The future of web development is not about choosing between
-                human creativity and AI efficiency&#8212;it&#39;s about creating
-                a symbiotic relationship that leverages the best of both worlds.
+                Encrypt sensitive data at rest and in transit. Never store
+                plain-text passwords—always hash and salt them using strong
+                algorithms like bcrypt or Argon2.
               </p>
 
-              <div className="bg-gradient-to-r from-violet-900/50 to-purple-900/50 rounded-xl p-8 border border-white/10 my-12">
+              <h2 className="text-3xl font-bold text-white mt-12 mb-6">
+                5. Keep Dependencies Up to Date
+              </h2>
+              <p>
+                Regularly update your dependencies and monitor for known
+                vulnerabilities using tools like npm audit, Snyk, or Dependabot.
+              </p>
+
+              <h2 className="text-3xl font-bold text-white mt-12 mb-6">
+                6. Monitor & Log Security Events
+              </h2>
+              <p>
+                Implement logging for authentication attempts, errors, and
+                suspicious activities. Use monitoring tools to detect and
+                respond to threats in real time.
+              </p>
+
+              <h2 className="text-3xl font-bold text-white mt-12 mb-6">
+                7. Educate Your Team
+              </h2>
+              <p>
+                Security is a team effort. Train your developers and staff on
+                secure coding practices and keep them updated on the latest
+                threats.
+              </p>
+
+              <blockquote className="border-l-4 border-blue-500 pl-6 my-8 italic text-gray-200 bg-blue-500/10 py-4 rounded-r-lg">
+                &quot;Security is not a one-time task, but a continuous process.
+                Stay vigilant and proactive to protect your users and your
+                business.&quot;
+              </blockquote>
+
+              <div className="bg-gradient-to-r from-blue-900/50 to-blue-900/50 rounded-xl p-8 border border-white/10 my-12">
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Ready to Embrace AI-Powered Development?
+                  Ready to Secure Your Application?
                 </h3>
                 <p className="text-gray-300 mb-6">
-                  At MDGDev, we&#39;re at the forefront of this revolution. Our
-                  team combines AI efficiency with human creativity to deliver
-                  exceptional web applications that push the boundaries of
-                  what&#39;s possible.
+                  MDGDev offers security audits, consulting, and implementation
+                  services to help you build and maintain secure web
+                  applications.
                 </p>
-                <button className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105 flex items-center space-x-2">
-                  <span>Start Your AI-Powered Project</span>
+                <button className="bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105 flex items-center space-x-2">
+                  <span>Contact Security Experts</span>
                   <ExternalLink className="w-4 h-4" />
                 </button>
               </div>

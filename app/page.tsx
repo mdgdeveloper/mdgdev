@@ -18,6 +18,7 @@ import {
   MessageCircle,
   Star,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -98,6 +99,7 @@ export default function LandingPage() {
       readTime: "8 min read",
       category: "Technology",
       image: "🤖",
+      link: "/posts/the-future-of-web-development",
     },
     {
       title: "Building Micro-SaaS: A Complete Guide for Entrepreneurs",
@@ -108,6 +110,7 @@ export default function LandingPage() {
       readTime: "12 min read",
       category: "Business",
       image: "💼",
+      link: "/posts/the-future-of-web-development",
     },
     {
       title: "React Performance Optimization: Advanced Techniques",
@@ -118,6 +121,7 @@ export default function LandingPage() {
       readTime: "10 min read",
       category: "Development",
       image: "⚡",
+      link: "/posts/the-future-of-web-development",
     },
     {
       title: "UI/UX Design Trends That Will Shape 2025",
@@ -128,6 +132,7 @@ export default function LandingPage() {
       readTime: "6 min read",
       category: "Design",
       image: "🎨",
+      link: "/posts/ui-ux-design-trends-that-will-shape",
     },
     {
       title: "Database Architecture for Modern Web Applications",
@@ -138,6 +143,7 @@ export default function LandingPage() {
       readTime: "15 min read",
       category: "Backend",
       image: "🗄️",
+      link: "/posts/the-future-of-web-development",
     },
     {
       title: "Securing Your Web Application: Best Practices Guide",
@@ -148,6 +154,7 @@ export default function LandingPage() {
       readTime: "11 min read",
       category: "Security",
       image: "🔒",
+      link: "/posts/securing-your-web-application-best-practices-guide",
     },
   ];
 
@@ -366,9 +373,11 @@ export default function LandingPage() {
                     <span>{post.readTime}</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-400 transition-colors">
-                  {post.title}
-                </h3>
+                <Link href={post.link}>
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-400 transition-colors cursor-pointer">
+                    {post.title}
+                  </h3>
+                </Link>
                 <p className="text-gray-400 leading-relaxed mb-4">
                   {post.excerpt}
                 </p>
