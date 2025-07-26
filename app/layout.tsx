@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const barlow = Barlow({
   weight: ["300", "400", "500", "700"],
@@ -41,14 +42,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <header>
-        <script
+      <head />
+      <body className={`${barlow.variable} antialiased`}>
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2947959204482771"
           crossOrigin="anonymous"
-        ></script>
-      </header>
-      <body className={`${barlow.variable} antialiased`}>{children}</body>
+        ></Script>
+        {children}
+      </body>
     </html>
   );
 }

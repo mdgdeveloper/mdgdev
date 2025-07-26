@@ -110,7 +110,7 @@ export default function LandingPage() {
       readTime: "12 min read",
       category: "Business",
       image: "💼",
-      link: "/posts/the-future-of-web-development",
+      link: "/posts/building-micro-saas-a-complete-guide-for-entrepreneurs",
     },
     {
       title: "React Performance Optimization: Advanced Techniques",
@@ -121,7 +121,7 @@ export default function LandingPage() {
       readTime: "10 min read",
       category: "Development",
       image: "⚡",
-      link: "/posts/the-future-of-web-development",
+      link: "/posts/react-performance-optimization-advanced-techniques",
     },
     {
       title: "UI/UX Design Trends That Will Shape 2025",
@@ -143,7 +143,7 @@ export default function LandingPage() {
       readTime: "15 min read",
       category: "Backend",
       image: "🗄️",
-      link: "/posts/the-future-of-web-development",
+      link: "/posts/database-architecture-for-modern-web-applications",
     },
     {
       title: "Securing Your Web Application: Best Practices Guide",
@@ -247,10 +247,14 @@ export default function LandingPage() {
           {navigationItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => setActiveSection(item.id)}
-              className={`hover:text-blue-400 transition-colors ${
-                activeSection === item.id ? "text-blue-400" : ""
-              }`}
+              onClick={() => {
+                const section = document.getElementById(item.id);
+                if (section) {
+                  section.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className={`cursor-pointer hover:text-blue-400 transition-colors ${activeSection === item.id ? "text-blue-400" : ""
+                }`}
             >
               {item.label}
             </button>
@@ -263,9 +267,8 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section
-        className={`relative z-10 px-6 md:px-12 py-20 transition-all duration-1000 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
+        className={`relative z-10 px-6 md:px-12 py-20 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
       >
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8 border border-white/20">
@@ -293,7 +296,12 @@ export default function LandingPage() {
               <span>Start Your Project</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="border-2 border-white/30 hover:border-white/50 px-8 py-4 rounded-full text-lg font-semibold transition-all hover:bg-white/10">
+            <button onClick={() => {
+              const section = document.getElementById('projects');
+              if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+              }
+            }} className="cursor-pointer border-2 border-white/30 hover:border-white/50 px-8 py-4 rounded-full text-lg font-semibold transition-all hover:bg-white/10">
               View Our Work
             </button>
           </div>
@@ -477,13 +485,12 @@ export default function LandingPage() {
                     </p>
                   </div>
                   <span
-                    className={`px-4 py-2 rounded-full text-sm font-medium ${
-                      project.status === "Live"
-                        ? "bg-green-500/20 text-green-400"
-                        : project.status === "Beta"
+                    className={`px-4 py-2 rounded-full text-sm font-medium ${project.status === "Live"
+                      ? "bg-green-500/20 text-green-400"
+                      : project.status === "Beta"
                         ? "bg-yellow-500/20 text-yellow-400"
                         : "bg-blue-500/20 text-blue-400"
-                    }`}
+                      }`}
                   >
                     {project.status}
                   </span>
@@ -901,7 +908,7 @@ export default function LandingPage() {
                 at a time.
               </p>
               <div className="flex items-center space-x-6 text-sm text-gray-400">
-                <span>Made with ❤️ in Barcelona</span>
+                <span>Made with ❤️ in Valencia</span>
                 <span>•</span>
                 <span>Powered by AI & Human Creativity</span>
               </div>
