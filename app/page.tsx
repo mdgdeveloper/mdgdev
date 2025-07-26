@@ -23,7 +23,6 @@ import Link from "next/link";
 export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     setIsVisible(true);
@@ -253,8 +252,7 @@ export default function LandingPage() {
                   section.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className={`cursor-pointer hover:text-blue-400 transition-colors ${activeSection === item.id ? "text-blue-400" : ""
-                }`}
+              className={`cursor-pointer hover:text-blue-400 transition-colors `}
             >
               {item.label}
             </button>
